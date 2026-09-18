@@ -38,7 +38,7 @@ nodes:
 ```
 
 ```bash
-$ kind create cluster --name interview-prep --config kind-multi-node.yaml
+$ kind create cluster --name kuber-cluster --config kind-multi-node.yaml
 $ kubectl get nodes -o wide
 ```
 
@@ -62,9 +62,9 @@ spec:
 ```bash
 $ kubectl apply -f pod.yaml
 $ kubectl get pods -o wide
-$ kubectl describe pod nginx-pod-name
-$ kubectl exec -it nginx-deploy-6946987795-zw5bx -- /bin/bash
-$ kubectl port-forward pod/nginx-deploy-6946987795-zw5bx 8080:80
+$ kubectl describe pod nginx-pod
+$ kubectl exec -it nginx-pod -- /bin/bash
+$ kubectl port-forward pod/nginx-pod 8080:80
 ```
 
 ## deployments
