@@ -13,7 +13,7 @@
 - Container runtime (containerd, in your kind setup) — actually pulls images and starts/stops containers. kubelet talks to it, not the other way around.>
 
 
-## install kubectl (Linux example — adjust for your OS)
+## install kubectl (Linux example)
 ```bash
 $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 $ chmod +x kubectl && sudo mv kubectl /usr/local/bin/
@@ -132,6 +132,7 @@ $ kubectl get endpoints nginx-svc
 **Services route by label selector matching pod labels, and a mismatch is the #1 cause of "my service isn't working."**
 
 ## namespace
+A namespace is an entity for organizing resources(like folders in filesystem).
 ```bash 
 $ kubectl create namespace dev
 $ kubectl apply -f deployment.yaml -n dev
